@@ -29,30 +29,31 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  padding: 2.4rem 1.6rem;
   background-color: var(--Stone100);
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  
 }
 
 .container {
-  background-color: var(--white);
-  width: 66rem;
-  min-height: 100vh;
+  width: min(100%, 66rem);
   padding: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  
+  background-color: var(--white);
+  border-radius: 0.6rem;
+}
+
+.main-content,
+.recipe {
+  width: 100%;
 }
 
 .recipe-image img {
-  width: 57rem;
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 1rem;
-  object-fit: cover;
 }
 
 .recipe-image {
@@ -178,7 +179,35 @@ table {
   margin-top: 2rem;
   font-size: 1.6rem;
   font-family: var(--text-preset2);
-  
+
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  .container {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .recipe {
+    padding: 3.2rem;
+  }
+
+  .recipe-image {
+    margin-bottom: 3.2rem;
+  }
+
+  .recipe-image img {
+    border-radius: 0;
+  }
+
+  .attribution {
+    padding: 1.6rem;
+    font-size: 1.2rem;
+  }
 }
 
 
